@@ -1,19 +1,30 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://wedding-photographer.b.goit.study/api';
+const api = axios.create({
+  baseURL: 'https://wedding-photographer.b.goit.study/api',
+});
+
+api.interceptors.response.use(
+  response => response,
+  error => {
+    console.error('API Error:', error);
+
+    return Promise.reject(error);
+  }
+);
 
 export async function getCategories() {
-  const response = await axios.get(`${BASE_URL}/categories`);
+  const response = await api.get('/categories');
   return response.data;
 }
 
 export async function getPhotos(params) {
-  const response = await axios.get(`${BASE_URL}/wedding-photos`, { params });
+  const response = await api.get('/wedding-photos', { params });
   return response.data;
 }
 
 export async function getFeedbacks(order) {
-  const response = await axios.get(`${BASE_URL}/feedbacks`, {
+  const response = await api.get('/feedbacks', {
     params: order ? { order } : {},
   });
 
@@ -21,6 +32,6 @@ export async function getFeedbacks(order) {
 }
 
 export async function createOrder(orderData) {
-  const response = await axios.post(`${BASE_URL}/order`, orderData);
+  const response = await api.post('/order', orderData);
   return response.data;
 }
