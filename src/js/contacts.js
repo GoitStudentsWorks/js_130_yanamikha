@@ -1,3 +1,4 @@
+import { openModal } from './success-modal.js';
 const form = document.querySelector('.contacts-form');
 const nameInput = form.querySelector('input[name="name"]');
 const phoneInput = form.querySelector('input[name="phone"]');
@@ -141,6 +142,7 @@ form.addEventListener('submit', event => {
     })
     .then(() => {
       form.reset();
+      openModal();
     })
     .catch(error => {
   console.error('Request error:', error);
