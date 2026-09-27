@@ -51,6 +51,11 @@
   line-height: 1.5;
 }
 
+
+/* =========================
+   BUTTON
+   ========================= */
+
 .hero__button {
   display: block;
   width: 100%;
@@ -61,10 +66,32 @@
   background-color: #fff;
   color: #000;
 
+  border: 2px solid transparent;
   border-radius: 10px;
 
   text-decoration: none;
   text-align: center;
+
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    transform 150ms ease;
+}
+
+/* Наведение */
+.hero__button:hover {
+  background-color: #f4d000;
+}
+
+/* Нажатие */
+.hero__button:active {
+  transform: scale(0.98);
+}
+
+/* Фокус с клавиатуры */
+.hero__button:focus-visible {
+  outline: 2px solid #f4d000;
+  outline-offset: 2px;
 }
 
 
@@ -97,6 +124,11 @@
 
     background-color: #f4d000;
     color: #000;
+  }
+
+  /* Наведение на планшете */
+  .hero__button:hover {
+    background-color: #e0c000;
   }
 }
 
@@ -150,5 +182,10 @@
 
     background-color: #f4d000;
     color: #000;
+  }
+
+  /* Наведение на десктопе */
+  .hero__button:hover {
+    background-color: #e0c000;
   }
 }
