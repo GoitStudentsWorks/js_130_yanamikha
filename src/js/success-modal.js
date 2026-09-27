@@ -1,27 +1,27 @@
+debugger;
 const refs = {
-  openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   backdrop: document.querySelector('.backdrop'),
   body: document.body,
 };
 
-if (
-  !refs.openModalBtn ||
-  !refs.closeModalBtn ||
-  !refs.modal ||
-  !refs.body ||
-  !refs.backdrop
-) {
-  return;
+if (refs.closeModalBtn) {
+  refs.closeModalBtn.addEventListener('click', closeModal);
 }
 
-refs.openModalBtn.addEventListener('click', openModal);
-refs.closeModalBtn.addEventListener('click', closeModal);
-
 function toggleModal() {
-  refs.modal.classList.toggle('is-hidden');
+  if (!refs.modal || !refs.body) refs.modal.classList.toggle('is-hidden');
   refs.body.classList.toggle('no-scroll');
+}
+
+function closeModal() {
+  if (!refs.backdrop) {
+    return;
+  }
+  toggleModal();
+  window.removeEventListener('keydown', onEscapePress);
+  refs.backdrop.removeEventListener('click', onBackdropClick);
 }
 
 function onEscapePress(event) {
@@ -31,19 +31,16 @@ function onEscapePress(event) {
 }
 
 function onBackdropClick(event) {
-  if (event.target === refs.backdrop) {
+  if (refs.backdrop && event.target === refs.backdrop) {
     closeModal();
   }
 }
 
 export function openModal() {
+  if (!refs.backdrop) {
+    return;
+  }
   toggleModal();
   window.addEventListener('keydown', onEscapePress);
   refs.backdrop.addEventListener('click', onBackdropClick);
-}
-
-function closeModal() {
-  toggleModal();
-  window.removeEventListener('keydown', onEscapePress);
-  refs.backdrop.removeEventListener('click', onBackdropClick);
 }
