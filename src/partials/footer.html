@@ -1,15 +1,79 @@
-<footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Footer — Maria Kovalenko Photography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <footer class="footer">
+      <div class="footer__brand">
+        <a href="/" aria-label="Maria Kovalenko Photography — на головну">
+          <svg
+            class="footer__logo"
+            viewBox="0 0 130 100"
+            role="img"
+            aria-label="MK"
+          >
+            <use href="./images/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <p class="footer__copy">
+          © 2025 Maria Kovalenko Photography.<br />All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer__cols">
+        <nav class="footer__col footer__col--menu" aria-label="Footer menu">
+          <h2 class="footer__title">Menu</h2>
+          <ul class="footer__menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col footer__col--social">
+          <h2 class="footer__title">Follow Me</h2>
+          <ul class="footer__social">
+            <li>
+              <a href="https://facebook.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="./images/sprite.svg#icon-facebook"></use>
+                </svg>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="./images/sprite.svg#icon-instagram"></use>
+                </svg>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="./images/sprite.svg#icon-x"></use>
+                </svg>
+                X
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
