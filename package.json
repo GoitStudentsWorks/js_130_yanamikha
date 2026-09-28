@@ -18,6 +18,10 @@
   "author": "Human Intelligence",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.20.0",
+    "izitoast": "^1.4.0",
+    "modern-normalize": "^3.0.1",
+    "simplelightbox": "^2.14.3",
     "accordion-js": "^3.4.1",
     "modern-normalize": "^3.0.1",
     "swiper": "^14.2.0",
