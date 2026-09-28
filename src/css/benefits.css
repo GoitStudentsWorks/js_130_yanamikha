@@ -12,11 +12,18 @@
   text-align: center;
 }
 
-.benefits__decoration {
+.benefits__heading::before {
+  content: '';
   display: block;
+
   width: 300px;
   height: 21px;
   margin: 0 auto 24px;
+
+  background-image: url('../img/decoration.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .benefits__title {
@@ -37,6 +44,7 @@
 
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
@@ -47,6 +55,7 @@
   gap: 12px;
 
   width: 100%;
+
   text-align: center;
 }
 
@@ -81,7 +90,6 @@
   text-align: center;
 }
 
-/* На mobile та desktop перенос вручну не робимо */
 .benefits__tablet-break {
   display: inline;
 }
@@ -101,24 +109,18 @@
     margin-bottom: 40px;
   }
 
-  .benefits__decoration {
-    width: 300px;
-    height: 21px;
+  .benefits__heading::before {
     margin-bottom: 16px;
   }
 
   .benefits__title {
     max-width: 704px;
 
-    font-family: var(--font-display);
     font-size: 28px;
-    font-weight: 500;
     line-height: 1.2;
-    text-align: center;
   }
 
   .benefits__list {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 24px;
@@ -127,61 +129,20 @@
   }
 
   .benefits__item {
-    display: flex;
     flex: 1 1 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
 
     min-width: 0;
     height: 334px;
-
-    text-align: center;
-  }
-
-  .benefits__icon {
-    display: block;
-    flex-shrink: 0;
-
-    width: 100px;
-    height: 100px;
-    margin: 0;
-
-    fill: none;
-    stroke: currentColor;
   }
 
   .benefits__item-title {
     width: 100%;
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
-    text-align: center;
   }
 
   .benefits__text {
     width: 100%;
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
   }
 
-  /*
-   * У Figma друга назва:
-   *
-   * From Dawn to Stars:
-   * Your Full Day in
-   * Frame.
-   *
-   * Перенос застосовується ТІЛЬКИ на Tablet.
-   */
   .benefits__tablet-break {
     display: block;
   }
@@ -202,25 +163,19 @@
     margin-bottom: 40px;
   }
 
-  .benefits__decoration {
-    width: 300px;
-    height: 21px;
+  .benefits__heading::before {
     margin-bottom: 16px;
   }
 
   .benefits__title {
     max-width: 650px;
 
-    font-family: var(--font-display);
     font-size: 40px;
-    font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    text-align: center;
   }
 
   .benefits__list {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
@@ -228,42 +183,17 @@
   }
 
   .benefits__item {
-    display: flex;
     flex: 1 1 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
 
     min-width: 0;
-    text-align: center;
-  }
-
-  .benefits__icon {
-    width: 100px;
-    height: 100px;
-    margin: 0;
   }
 
   .benefits__item-title {
     width: 100%;
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
-    text-align: center;
   }
 
   .benefits__text {
     width: 100%;
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
   }
 
   .benefits__tablet-break {
