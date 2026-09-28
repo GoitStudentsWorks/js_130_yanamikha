@@ -1,140 +1,148 @@
-:root {
-  --page-bg: #fcf9f0;
-  --footer-bg: #f9f6e3;
-  --ink: #000;
-  --gold: #b8a012;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Nunito', system-ui, sans-serif;
-  background: var(--page-bg);
-  color: var(--ink);
-  padding: 80px 64px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* ---------- FOOTER ---------- */
 .footer {
-  max-width: 1312px;
-  margin: 0 auto;
-  background: var(--footer-bg);
-  border: 2px solid var(--ink);
-  border-radius: 28px;
-  padding: 48px;
+  --footer-bg: #faf7e6;
+  padding: 48px 0;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.footer__card {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 48px;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 20px;
+  border: 2px solid var(--color-text);
+  border-radius: 24px;
+  background-color: var(--footer-bg);
 }
 
 .footer__brand {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-top: 8px;
+  align-items: flex-start;
+  gap: 13px;
 }
-.footer__logo {
+
+.footer__logo-link {
   display: block;
-  width: 130px;
-  height: auto;
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
 }
+
+.footer__logo {
+  width: 206px;
+  height: 161px;
+}
+
 .footer__copy {
+  max-width: 263px;
+  font-family: var(--font-main);
   font-size: 14px;
-  line-height: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 .footer__cols {
   display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
-.footer__col--menu {
-  width: 206px;
-}
-.footer__col--social {
-  width: 166px;
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer__title {
+  font-family: var(--font-main);
   font-size: 16px;
   font-weight: 600;
-  line-height: 24px;
-  margin-bottom: 16px;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 .footer__menu {
-  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-.footer__menu a {
+
+/* Горизонтальні падінги потрібні для фону на ховері,
+   відʼємні маржини повертають текст на лінію заголовка */
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  margin: 0 -6px;
+  padding: 0 6px;
+  border-radius: var(--radius);
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: background-color var(--transition);
 }
 
 .footer__social {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-top: 8px;
 }
-.footer__social a {
+
+.footer__social-link {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin: 0 -6px;
+  padding: 8px 6px;
+  border-radius: var(--radius);
   font-size: 14px;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: background-color var(--transition);
 }
-.footer__social svg {
-  width: 20px;
-  height: 20px;
+
+.footer__social-icon {
   flex-shrink: 0;
+  width: 24px;
+  height: 24px;
 }
 
-.footer a {
-  transition: opacity 0.2s;
-}
-.footer a:hover {
-  opacity: 0.65;
-}
-.footer a:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-  border-radius: 4px;
+.footer__logo-link:hover,
+.footer__link:hover,
+.footer__social-link:hover,
+.footer__logo-link:focus-visible,
+.footer__link:focus-visible,
+.footer__social-link:focus-visible {
+  background-color: var(--color-hover-bg);
 }
 
-/* ---------- tabletmobile ---------- */
-@media (max-width: 900px) {
-  body {
-    padding: 32px 16px;
+.footer__logo-link:focus-visible,
+.footer__link:focus-visible,
+.footer__social-link:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer__card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 48px;
   }
-  .footer {
-    flex-direction: column;
-    padding: 32px 24px;
-    border-radius: 24px;
+
+  .footer__logo {
+    width: 128px;
+    height: 100px;
   }
+
   .footer__cols {
-    flex-wrap: wrap;
-    gap: 40px;
-    width: 100%;
+    flex-direction: row;
   }
-  .footer__col--menu,
-  .footer__col--social {
-    width: auto;
-    min-width: 140px;
-  }
-  .footer__menu {
-    gap: 20px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px 0;
   }
 }
