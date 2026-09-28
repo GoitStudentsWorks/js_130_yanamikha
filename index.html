@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&family=Mulish:wght@400;500&display=swap"
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&family=Mulish:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
     <script type="module" crossorigin src="/team_project_js/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/team_project_js/assets/vendor-BDU_A1JB.js">
-    <link rel="stylesheet" crossorigin href="/team_project_js/assets/vendor-DxHKOkZ5.css">
-    <link rel="stylesheet" crossorigin href="/team_project_js/assets/index-BfTxAkjT.css">
+    <link rel="modulepreload" crossorigin href="/team_project_js/assets/vendor-D2J4v5S5.js">
+    <link rel="stylesheet" crossorigin href="/team_project_js/assets/vendor-DSr-st08.css">
+    <link rel="stylesheet" crossorigin href="/team_project_js/assets/index-DPuH6RRb.css">
   </head>
   <body>
     <header class="header">
@@ -28,7 +27,7 @@
       aria-label="Maria Kovalenko Photography"
     >
       <svg class="header__logo-icon" aria-hidden="true">
-        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#logo"></use>
+        <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#logo"></use>
       </svg>
     </a>
 
@@ -66,7 +65,7 @@
         height="24"
         aria-hidden="true"
       >
-        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-menu"></use>
+        <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-menu"></use>
       </svg>
     </button>
   </div>
@@ -79,7 +78,7 @@
         aria-label="Maria Kovalenko Photography"
       >
         <svg class="header__logo-icon" aria-hidden="true">
-          <use href="/team_project_js/assets/sprite-BmlefgTb.svg#logo"></use>
+          <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#logo"></use>
         </svg>
       </a>
 
@@ -90,7 +89,7 @@
           height="24"
           aria-hidden="true"
         >
-          <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+          <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
         </svg>
       </button>
     </div>
@@ -121,7 +120,7 @@
 
     <main>
       <!-- Loads the specified .html file -->
-      <section class="hero">
+      <section class="hero" id="hero">
   <div class="hero__content">
     <h1 class="hero__title">
       Capture Your Love Story with Timeless Photography
@@ -138,10 +137,13 @@
     </a>
   </div>
 </section>
-      <section class="about-us">
-  <svg class="about-us-icon" aria-hidden="true">
-    <use href="/team_project_js/assets/sprite-BmlefgTb.svg#decoration"></use>
+      
+<section class="about-us" id="about-us">
+<section class="about-us">
+  <svg aria-hidden="true" class="decoration"  aria-hidden="true">
+    <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#decoration"></use>
   </svg>
+
   <h2 class="about-us-heading">
     Meet Maria Kovalenko: Your Partner in Capturing Unforgettable Wedding
     Moments
@@ -160,19 +162,19 @@
     <h2 class="modal__header">Thank You for Your Inquiry!</h2>
     <button type="button" class="close-btn" data-modal-close>
       <svg width="24" height="24" class="close-btn__icon">
-        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+        <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
       </svg>
     </button>
     <picture class="modal__picture">
-      <source media="(min-width: 768px)" srcset="/team_project_js/assets/working-table-DORhOMIS.png" />
+      <source media="(min-width: 768px)" srcset="./img/working-table.png" />
       <source
         media="(min-width: 375px)"
-        srcset="/team_project_js/assets/working-table-DORhOMIS.png"
+        srcset="./img/working-table-mobile.png"
       />
 
       <img
         class="modal__img"
-        src="/team_project_js/assets/working-table-DORhOMIS.png"
+        src="./img/working-table-mobile.png"
         alt="An elegant and styled flat lay composition for a wedding photographer's"
         loading="lazy"
       />
@@ -189,9 +191,9 @@
       <section class="feedbacks">
   <div class="container">
     <div class="feedbacks-header">
-      <div class="feedbacks-decoration" aria-hidden="true">
-        <img src="./img/decoration.svg" alt="" />
-      </div>
+      <svg aria-hidden="true" class="decoration">
+        <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#decoration"></use>
+      </svg>
 
       <h2 class="feedbacks-title">Words from Our Wonderful Couples</h2>
 
@@ -262,9 +264,27 @@
   </div>
 </section>
 
+      <section class="portfolio" id="portfolio">
+  <div class="container">
+    <svg aria-hidden="true" class="decoration">
+      <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#decoration"></use>
+    </svg>
+    <h2>Portfolio Highlights</h2>
+    <ul class="portfolio__categories"></ul>
+    <span id="loader" class="loader"></span>
+    <ul class="portfolio__gallery"></ul>
+    <div id="loaderText"></div>
+    <button id="load-more-btn" class="accent-button portfoilio__btn">
+      Show more
+    </button>
+  </div>
+</section>
+
       <section class="faq" id="faq">
   <div class="container faq-container">
-    <img class="faq-decoration" src="./img/decoration.svg" alt="" />
+    <svg aria-hidden="true" class="decoration">
+      <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#decoration"></use>
+    </svg>
     <h2 class="faq-title">Frequently Asked Questions</h2>
     <p class="faq-text">
       Here I've gathered answers to the most popular questions to help you plan
@@ -279,7 +299,7 @@
             How do we book our date and how far in advance should we do it?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -302,7 +322,7 @@
             Do you help with that?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -325,7 +345,7 @@
             When will we receive our photos and how many will there be?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -348,7 +368,7 @@
             What is typically included in your wedding packages?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -370,7 +390,7 @@
             Do you travel for weddings outside of Berlin?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -400,7 +420,7 @@
       <ul class="contacts-list">
         <li class="contacts-item">
           <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-mail"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-mail"></use>
           </svg>
           <a class="contacts-link" href="mailto:info@mariakovalenko.com">
             info@mariakovalenko.com
@@ -408,7 +428,7 @@
         </li>
         <li class="contacts-item">
           <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-phone"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-phone"></use>
           </svg>
           <a class="contacts-link" href="tel:+405551234567">
             +40 (555) 123-4567
@@ -416,7 +436,7 @@
         </li>
         <li class="contacts-item">
           <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-location"></use>
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-location"></use>
           </svg>
           <a
             class="contacts-link"
@@ -473,62 +493,92 @@
     </main>
 
     <footer class="footer">
-  <div class="footer__brand">
-    <a href="/" aria-label="Maria Kovalenko Photography — на головну">
-      <svg
-        class="footer__logo"
-        viewBox="0 0 130 100"
-        role="img"
-        aria-label="MK"
-      >
-        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-logo"></use>
-      </svg>
-    </a>
-    <p class="footer__copy">
-      © 2025 Maria Kovalenko Photography.<br />All rights reserved.
-    </p>
-  </div>
+  <div class="container">
+    <div class="footer__card">
+      <div class="footer__brand">
+        <a
+          class="footer__logo-link"
+          href="#hero"
+          aria-label="Maria Kovalenko Photography, back to top"
+        >
+          <svg class="footer__logo" viewBox="0 0 130 100" aria-hidden="true">
+            <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <p class="footer__copy">
+          © 2025 Maria Kovalenko Photography. All rights reserved.
+        </p>
+      </div>
 
-  <div class="footer__cols">
-    <nav class="footer__col footer__col--menu" aria-label="Footer menu">
-      <h2 class="footer__title">Menu</h2>
-      <ul class="footer__menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#benefits">Benefits</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Footer menu">
+          <h3 class="footer__title">Menu</h3>
+          <ul class="footer__menu">
+            <li><a class="footer__link" href="#hero">Home</a></li>
+            <li><a class="footer__link" href="#about-us">About Me</a></li>
+            <li><a class="footer__link" href="#benefits">Benefits</a></li>
+            <li><a class="footer__link" href="#portfolio">Portfolio</a></li>
+            <li><a class="footer__link" href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <div class="footer__col footer__col--social">
-      <h2 class="footer__title">Follow Me</h2>
-      <ul class="footer__social">
-        <li>
-          <a href="https://facebook.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-facebook"></use>
-            </svg>
-            Facebook
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-instagram"></use>
-            </svg>
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-x"></use>
-            </svg>
-            X
-          </a>
-        </li>
-      </ul>
+        <nav class="footer__col" aria-label="Social links">
+          <h3 class="footer__title">Follow Me</h3>
+          <ul class="footer__social">
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="footer__social-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-facebook"></use>
+                </svg>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="footer__social-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-instagram"></use>
+                </svg>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="footer__social-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#icon-x"></use>
+                </svg>
+                X
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </footer>
