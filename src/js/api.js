@@ -23,9 +23,9 @@ export async function getPhotos(params) {
   return response.data;
 }
 
-export async function getFeedbacks(order) {
+export async function getFeedbacks(params) {
   const response = await api.get('/feedbacks', {
-    params: order ? { order } : {},
+    params: params ? { params } : {},
   });
 
   return response.data;
