@@ -75,5 +75,4 @@ h2 {
 
 body.no-scroll {
   overflow: hidden;
-  padding-right: var(--scrollbar-width, 0px);
 }
