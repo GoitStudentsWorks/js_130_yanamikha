@@ -166,15 +166,15 @@
       </svg>
     </button>
     <picture class="modal__picture">
-      <source media="(min-width: 768px)" srcset="./img/working-table.png" />
+      <source media="(min-width: 768px)" srcset="/team_project_js/assets/working-table-DORhOMIS.png" />
       <source
         media="(min-width: 375px)"
-        srcset="./img/working-table-mobile.png"
+        srcset="/team_project_js/assets/working-table-DORhOMIS.png"
       />
 
       <img
         class="modal__img"
-        src="./img/working-table-mobile.png"
+        src="/team_project_js/assets/working-table-DORhOMIS.png"
         alt="An elegant and styled flat lay composition for a wedding photographer's"
         loading="lazy"
       />
@@ -411,7 +411,9 @@
       <section class="contacts" id="contacts">
   <div class="container contacts-container">
     <div class="contacts-info">
-      <img class="contacts-decoration" src="./img/decoration.svg" alt="" />
+      <svg aria-hidden="true" class="contacts-decoration" aria-hidden="true">
+        <use href="/team_project_js/assets/sprite-BQAzKzL_.svg#decoration"></use>
+      </svg>
       <h2 class="contacts-title">Let's Tell Your Story</h2>
       <p class="contacts-text">
         I can't wait to hear more about your wedding! Tell me about your plans,
@@ -485,6 +487,7 @@
         ></textarea>
         <span class="contacts-error"></span>
       </label>
+      <span id="loader" class="contacts-loader"></span>
       <button class="contacts-button" type="submit">Let's Talk</button>
     </form>
   </div>
