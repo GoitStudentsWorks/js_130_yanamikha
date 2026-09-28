@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/team_project_js/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Golden Hour</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&family=Mulish:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
     <script type="module" crossorigin src="/team_project_js/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/team_project_js/assets/vendor-DUbXjjWf.js">
-    <link rel="stylesheet" crossorigin href="/team_project_js/assets/vendor-XYtvLfmp.css">
-    <link rel="stylesheet" crossorigin href="/team_project_js/assets/index-D3PUlYog.css">
+    <link rel="modulepreload" crossorigin href="/team_project_js/assets/vendor-BDU_A1JB.js">
+    <link rel="stylesheet" crossorigin href="/team_project_js/assets/vendor-DxHKOkZ5.css">
+    <link rel="stylesheet" crossorigin href="/team_project_js/assets/index-BsWFoaRF.css">
   </head>
   <body>
     <header class="header">
@@ -27,7 +28,7 @@
       aria-label="Maria Kovalenko Photography"
     >
       <svg class="header__logo-icon" aria-hidden="true">
-        <use href="/team_project_js/assets/sprite-DsNp7gT0.svg#logo"></use>
+        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#logo"></use>
       </svg>
     </a>
 
@@ -65,7 +66,7 @@
         height="24"
         aria-hidden="true"
       >
-        <use href="/team_project_js/assets/sprite-DsNp7gT0.svg#icon-menu"></use>
+        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-menu"></use>
       </svg>
     </button>
   </div>
@@ -78,7 +79,7 @@
         aria-label="Maria Kovalenko Photography"
       >
         <svg class="header__logo-icon" aria-hidden="true">
-          <use href="/team_project_js/assets/sprite-DsNp7gT0.svg#logo"></use>
+          <use href="/team_project_js/assets/sprite-BmlefgTb.svg#logo"></use>
         </svg>
       </a>
 
@@ -89,7 +90,7 @@
           height="24"
           aria-hidden="true"
         >
-          <use href="/team_project_js/assets/sprite-DsNp7gT0.svg#icon-close"></use>
+          <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
         </svg>
       </button>
     </div>
@@ -120,7 +121,7 @@
 
     <main>
       <!-- Loads the specified .html file -->
-<section class="hero">
+      <section class="hero">
   <div class="hero__content">
     <h1 class="hero__title">
       Capture Your Love Story with Timeless Photography
@@ -137,8 +138,10 @@
     </a>
   </div>
 </section>
-<section class="about-us">
-  <img class="about-us-icon" src="../img/decoration.svg" alt="decoration" />
+      <section class="about-us">
+  <svg class="about-us-icon" aria-hidden="true">
+    <use href="/team_project_js/assets/sprite-BmlefgTb.svg#decoration"></use>
+  </svg>
   <h2 class="about-us-heading">
     Meet Maria Kovalenko: Your Partner in Capturing Unforgettable Wedding
     Moments
@@ -149,78 +152,119 @@
     artistry with a personal touch, ensuring that each couple's story is told
     through stunning imagery.
   </p>
-  <img class="about-us-photo" src="../img/about-us.jpg" alt="Wedding couple" />
+  <img class="about-us-photo" src="/team_project_js/assets/about-us-B8qtaeZU.jpg" alt="Wedding couple" />
 </section>
 
-<section class="feedbacks">
-    <div class="container">
-        <div class="feedbacks-header">
-            <div class="feedbacks-decoration" aria-hidden="true">
-                <img src="../img/decoration.svg" alt="" />
-            </div>
+      <section class="backdrop is-hidden" data-modal>
+  <div class="modal">
+    <h2 class="modal__header">Thank You for Your Inquiry!</h2>
+    <button type="button" class="close-btn" data-modal-close>
+      <svg width="24" height="24" class="close-btn__icon">
+        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
+      </svg>
+    </button>
+    <picture class="modal__picture">
+      <source media="(min-width: 768px)" srcset="/team_project_js/assets/working-table-DORhOMIS.png" />
+      <source
+        media="(min-width: 375px)"
+        srcset="/team_project_js/assets/working-table-DORhOMIS.png"
+      />
 
-            <h2 class="feedbacks-title">Words from Our Wonderful Couples</h2>
+      <img
+        class="modal__img"
+        src="/team_project_js/assets/working-table-DORhOMIS.png"
+        alt="An elegant and styled flat lay composition for a wedding photographer's"
+        loading="lazy"
+      />
+    </picture>
+    <p class="modal__text">
+      I have received your message and I'm so excited about your interest! I
+      will get in touch with you within 24-48 hours to discuss the details of
+      your wedding day. In the meantime, feel free to browse my portfolio or
+      follow me on Instagram for more inspiration.
+    </p>
+  </div>
+</section>
 
-            <p class="feedbacks-description">
-                Read what the couples who entrusted us with their most precious
-                memories have to say.
-            </p>
-        </div>
+      <section class="feedbacks">
+  <div class="container">
+    <div class="feedbacks-header">
+      <div class="feedbacks-decoration" aria-hidden="true">
+        <img src="./img/decoration.svg" alt="" />
+      </div>
 
-        <div class="feedbacks-swiper swiper">
-            <ul class="feedbacks-list swiper-wrapper">
-                <li class="feedbacks-card swiper-slide">
-                    <p class="feedbacks-text">
-                        "Maria is a true professional! She managed to capture every single
-                        emotion of our wedding day. Looking through the photos, we get to
-                        relive that special day all over again. Thank you for the incredible
-                        memories!"
-                    </p>
+      <h2 class="feedbacks-title">Words from Our Wonderful Couples</h2>
 
-                    <p class="feedbacks-author">Olena &amp; David</p>
-                </li>
-
-                <li class="feedbacks-card swiper-slide">
-                    <p class="feedbacks-text">
-                        "We are so happy we chose Maria as our wedding photographer. Her
-                        professional approach and ability to see beauty in the details turned
-                        our photos into a true work of art. We recommend her to everyone!"
-                    </p>
-
-                    <p class="feedbacks-author">Ann &amp; Ian</p>
-                </li>
-
-                <li class="feedbacks-card swiper-slide">
-                    <p class="feedbacks-text">
-                        "The photoshoot with Maria was so easy and relaxed. She knows how to
-                        create a comfortable atmosphere, which made the photos come out
-                        incredibly lively and emotional. We are absolutely thrilled with the
-                        result!"
-                    </p>
-
-                    <p class="feedbacks-author">Julia &amp; Mark</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="feedbacks-controls">
-            <div class="feedbacks-pagination"></div>
-
-            <div class="feedbacks-navigation">
-                <button class="feedbacks-button feedbacks-button-prev" type="button" aria-label="Previous review">
-                    <span aria-hidden="true">←</span>
-                </button>
-
-                <button class="feedbacks-button feedbacks-button-next" type="button" aria-label="Next review">
-                    <span aria-hidden="true">→</span>
-                </button>
-            </div>
-        </div>
+      <p class="feedbacks-description">
+        Read what the couples who entrusted us with their most precious memories
+        have to say.
+      </p>
     </div>
+
+    <div class="feedbacks-swiper swiper">
+      <ul class="feedbacks-list swiper-wrapper">
+        <li class="feedbacks-card swiper-slide">
+          <p class="feedbacks-text">
+            "Maria is a true professional! She managed to capture every single
+            emotion of our wedding day. Looking through the photos, we get to
+            relive that special day all over again. Thank you for the incredible
+            memories!"
+          </p>
+
+          <p class="feedbacks-author">Olena &amp; David</p>
+        </li>
+
+        <li class="feedbacks-card swiper-slide">
+          <p class="feedbacks-text">
+            "We are so happy we chose Maria as our wedding photographer. Her
+            professional approach and ability to see beauty in the details
+            turned our photos into a true work of art. We recommend her to
+            everyone!"
+          </p>
+
+          <p class="feedbacks-author">Ann &amp; Ian</p>
+        </li>
+
+        <li class="feedbacks-card swiper-slide">
+          <p class="feedbacks-text">
+            "The photoshoot with Maria was so easy and relaxed. She knows how to
+            create a comfortable atmosphere, which made the photos come out
+            incredibly lively and emotional. We are absolutely thrilled with the
+            result!"
+          </p>
+
+          <p class="feedbacks-author">Julia &amp; Mark</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="feedbacks-controls">
+      <div class="feedbacks-pagination"></div>
+
+      <div class="feedbacks-navigation">
+        <button
+          class="feedbacks-button feedbacks-button-prev"
+          type="button"
+          aria-label="Previous review"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <button
+          class="feedbacks-button feedbacks-button-next"
+          type="button"
+          aria-label="Next review"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="faq" id="faq">
+
+      <section class="faq" id="faq">
   <div class="container faq-container">
-    <img class="faq-decoration" src="../img/decoration.svg" alt="" />
+    <img class="faq-decoration" src="./img/decoration.svg" alt="" />
     <h2 class="faq-title">Frequently Asked Questions</h2>
     <p class="faq-text">
       Here I've gathered answers to the most popular questions to help you plan
@@ -235,7 +279,7 @@
             How do we book our date and how far in advance should we do it?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="../img/sprite.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -258,7 +302,7 @@
             Do you help with that?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="../img/sprite.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -281,7 +325,7 @@
             When will we receive our photos and how many will there be?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="../img/sprite.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -304,7 +348,7 @@
             What is typically included in your wedding packages?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="../img/sprite.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -326,7 +370,7 @@
             Do you travel for weddings outside of Berlin?
           </span>
           <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-            <use href="../img/sprite.svg#icon-close"></use>
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-close"></use>
           </svg>
         </button>
         <div class="faq-answer">
@@ -344,109 +388,148 @@
   </div>
 </section>
 
-<section class="contacts" id="contacts">
+      <section class="contacts" id="contacts">
   <div class="container contacts-container">
     <div class="contacts-info">
-<img
-        class="contacts-decoration"
-        src="../img/decoration.svg"
-        alt=""
-      />
+      <img class="contacts-decoration" src="./img/decoration.svg" alt="" />
       <h2 class="contacts-title">Let's Tell Your Story</h2>
-<p class="contacts-text">
-  I can't wait to hear more about your wedding! Tell me about your plans, and
-  I'll be in touch to discuss how we can create magic together.
-</p>
-<ul class="contacts-list">
-<li class="contacts-item">
-  <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-  <use href="../img/sprite.svg#icon-mail"></use>
-</svg>
-  <a class="contacts-link" href="mailto:info@mariakovalenko.com">
-    info@mariakovalenko.com
-  </a>
-</li>
-<li class="contacts-item">
-  <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-  <use href="../img/sprite.svg#icon-phone"></use>
-</svg>
-  <a class="contacts-link" href="tel:+405551234567">
-    +40 (555) 123-4567
-  </a>
-</li>
-<li class="contacts-item">
-  <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
-  <use href="../img/sprite.svg#icon-location"></use>
-</svg>
-  <a
-    class="contacts-link"
-    href="https://www.google.com/maps/search/?api=1&query=Raschdorffstra%C3%9Fe+2-26%2C+13409+Berlin%2C+Germany"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Raschdorffstraße 2-26, 13409 Berlin, Germany
-  </a>
-</li>
-</ul>
-</div>
-<form class="contacts-form">
-  <label class="contacts-label">
-  Name*
-  <input
-    class="contacts-input"
-    type="text"
-    name="name"
-    placeholder="Maria"
-    minlength="2"
-    maxlength="64"
-    required
-  />
-  <span class="contacts-error"></span>
-</label>
-<label class="contacts-label">
-  Phone*
-  <input
-    class="contacts-input"
-    type="tel"
-    name="phone"
-    placeholder="+1 (202) 111 2323"
-    required
-  />
-  <span class="contacts-error"></span>
-</label>
-<label class="contacts-label">
-  Message
-  <textarea
-    class="contacts-textarea"
-    name="message"
-    minlength="5"
-    maxlength="256"
-    placeholder="Tell me a little about you and your special day. Don't forget to include your wedding date, venue, and what you're most excited about..."
-  ></textarea>
-  <span class="contacts-error"></span>
-</label>
-<button class="contacts-button" type="submit">
-  Let's Talk
-</button>
-</form>
+      <p class="contacts-text">
+        I can't wait to hear more about your wedding! Tell me about your plans,
+        and I'll be in touch to discuss how we can create magic together.
+      </p>
+      <ul class="contacts-list">
+        <li class="contacts-item">
+          <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-mail"></use>
+          </svg>
+          <a class="contacts-link" href="mailto:info@mariakovalenko.com">
+            info@mariakovalenko.com
+          </a>
+        </li>
+        <li class="contacts-item">
+          <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-phone"></use>
+          </svg>
+          <a class="contacts-link" href="tel:+405551234567">
+            +40 (555) 123-4567
+          </a>
+        </li>
+        <li class="contacts-item">
+          <svg class="contacts-icon" width="24" height="24" aria-hidden="true">
+            <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-location"></use>
+          </svg>
+          <a
+            class="contacts-link"
+            href="https://www.google.com/maps/search/?api=1&query=Raschdorffstra%C3%9Fe+2-26%2C+13409+Berlin%2C+Germany"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Raschdorffstraße 2-26, 13409 Berlin, Germany
+          </a>
+        </li>
+      </ul>
+    </div>
+    <form class="contacts-form">
+      <label class="contacts-label">
+        Name*
+        <input
+          class="contacts-input"
+          type="text"
+          name="name"
+          placeholder="Maria"
+          minlength="2"
+          maxlength="64"
+          required
+        />
+        <span class="contacts-error"></span>
+      </label>
+      <label class="contacts-label">
+        Phone*
+        <input
+          class="contacts-input"
+          type="tel"
+          name="phone"
+          placeholder="+1 (202) 111 2323"
+          required
+        />
+        <span class="contacts-error"></span>
+      </label>
+      <label class="contacts-label">
+        Message
+        <textarea
+          class="contacts-textarea"
+          name="message"
+          minlength="5"
+          maxlength="256"
+          placeholder="Tell me a little about you and your special day. Don't forget to include your wedding date, venue, and what you're most excited about..."
+        ></textarea>
+        <span class="contacts-error"></span>
+      </label>
+      <button class="contacts-button" type="submit">Let's Talk</button>
+    </form>
   </div>
 </section>
-     
+
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
+  <div class="footer__brand">
+    <a href="/" aria-label="Maria Kovalenko Photography — на головну">
+      <svg
+        class="footer__logo"
+        viewBox="0 0 130 100"
+        role="img"
+        aria-label="MK"
       >
-        GoIT team
-      </a>
+        <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <p class="footer__copy">
+      © 2025 Maria Kovalenko Photography.<br />All rights reserved.
     </p>
+  </div>
+
+  <div class="footer__cols">
+    <nav class="footer__col footer__col--menu" aria-label="Footer menu">
+      <h2 class="footer__title">Menu</h2>
+      <ul class="footer__menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__col footer__col--social">
+      <h2 class="footer__title">Follow Me</h2>
+      <ul class="footer__social">
+        <li>
+          <a href="https://facebook.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-facebook"></use>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-instagram"></use>
+            </svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <use href="/team_project_js/assets/sprite-BmlefgTb.svg#icon-x"></use>
+            </svg>
+            X
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
 
