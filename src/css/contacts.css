@@ -199,6 +199,46 @@
   cursor: not-allowed;
 }
 
+.contacts-loader {
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #b09a0c;
+  border-radius: 50%;
+  animation: contacts-spin 0.8s linear infinite;
+}
+
+.contacts-loader.is-hidden {
+  display: none;
+}
+
+@keyframes contacts-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contacts-notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+
+  max-width: 320px;
+  padding: 12px 16px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffffff;
+
+  background-color: #c40000;
+  border-radius: 6px;
+}
+
+.contacts-notification.is-hidden {
+  display: none;
+}
 
 /* =========================
    TABLET — від 768px

@@ -145,17 +145,17 @@ form.addEventListener('submit', event => {
       openModal();
     })
     .catch(error => {
-      console.error('Request error:', error);
+  console.error('Request error:', error);
 
-      notification.textContent =
-        error.message || 'Something went wrong. Please try again.';
+  notification.textContent =
+    error.message || 'Something went wrong. Please try again.';
 
-      notification.classList.remove('is-hidden');
+  notification.classList.remove('is-hidden');
 
-      setTimeout(() => {
-        notification.classList.add('is-hidden');
-      }, 3000);
-    })
+  setTimeout(() => {
+    notification.classList.add('is-hidden');
+  }, 3000);
+})
     .finally(() => {
       submitButton.disabled = false;
       loader.classList.add('is-hidden');
