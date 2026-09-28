@@ -5,11 +5,8 @@
   margin: 0 32px;
 
   background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
-    url("../img/hero.jpg");
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('./img/hero.jpg');
 
   background-size: cover;
   background-position: center;
@@ -50,7 +47,6 @@
   font-size: 18px;
   line-height: 1.5;
 }
-
 
 /* =========================
    BUTTON
@@ -94,7 +90,6 @@
   outline-offset: 2px;
 }
 
-
 /* =========================
    TABLET
    ========================= */
@@ -131,7 +126,6 @@
     background-color: #e0c000;
   }
 }
-
 
 /* =========================
    DESKTOP
