@@ -10,7 +10,9 @@ if (refs.closeModalBtn) {
 }
 
 function toggleModal() {
-  if (!refs.modal || !refs.body) refs.modal.classList.toggle('is-hidden');
+  if (!refs.modal || !refs.body) {
+    refs.modal.classList.toggle('is-hidden');
+  }
   refs.body.classList.toggle('no-scroll');
 }
 
