@@ -77,6 +77,15 @@ body.no-scroll {
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 .accent-button {
   font-weight: 500;
   height: 44px;
