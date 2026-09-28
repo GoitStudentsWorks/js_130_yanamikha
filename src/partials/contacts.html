@@ -1,7 +1,9 @@
 <section class="contacts" id="contacts">
   <div class="container contacts-container">
     <div class="contacts-info">
-      <img class="contacts-decoration" src="./img/decoration.svg" alt="" />
+      <svg aria-hidden="true" class="contacts-decoration" aria-hidden="true">
+        <use href="./img/sprite.svg#decoration"></use>
+      </svg>
       <h2 class="contacts-title">Let's Tell Your Story</h2>
       <p class="contacts-text">
         I can't wait to hear more about your wedding! Tell me about your plans,
@@ -75,6 +77,7 @@
         ></textarea>
         <span class="contacts-error"></span>
       </label>
+      <span id="loader" class="contacts-loader"></span>
       <button class="contacts-button" type="submit">Let's Talk</button>
     </form>
   </div>
