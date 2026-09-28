@@ -114,8 +114,19 @@ html {
   border: 2px solid var(--color-btn);
 }
 
+.decoration {
+  height: 20.3px;
+  margin: 24px auto;
+}
+
 @media only screen and (min-width: 768px) {
   .accent-button {
     width: 310px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size: 48px;
   }
 }
