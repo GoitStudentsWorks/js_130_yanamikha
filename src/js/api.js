@@ -29,6 +29,6 @@ export async function getFeedbacks() {
 }
 
 export async function createOrder(orderData) {
-  const response = await api.post('/order', orderData);
+  const response = await api.post('/orders', orderData);
   return response.data;
 }
