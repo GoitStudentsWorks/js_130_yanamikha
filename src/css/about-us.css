@@ -4,7 +4,7 @@
   align-items: center;
   min-width: 320px;
   margin-inline: auto;
-  padding: 64px 32px;
+  padding: 64px 0;
 }
 
 .about-us-icon {
@@ -28,25 +28,9 @@
   text-align: center;
 }
 
-.about-us-photo {
+.about-us-photo img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 24px;
-}
-
-/* tablet */
-@media (min-width: 375px) {
-  .about-us {
-    max-width: 768px;
-    padding: 64px 32px;
-  }
-}
-
-/* desktop */
-@media (min-width: 768px) {
-  .about-us {
-    max-width: 1440px;
-    padding: 92px 64px;
-  }
 }
