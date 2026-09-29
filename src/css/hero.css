@@ -1,11 +1,17 @@
 .hero {
-  position: relative;
+  padding: var(--section-sm) 0;
+}
 
-  min-height: 600px;
-  margin: 0 32px;
+.hero__banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 518px;
+  padding: 32px 20px;
 
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
     url('../img/hero-mobile.jpg');
 
   background-size: cover;
@@ -17,53 +23,45 @@
 }
 
 @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
-  .hero {
+  .hero__banner {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
       url('../img/hero-mobile@2x.jpg');
   }
 }
 
 @media (min-width: 768px) {
-  .hero {
+  .hero__banner {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
       url('../img/hero-tablet.jpg');
   }
 }
 
 @media (min-width: 768px) and (min-resolution: 2dppx),
   (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero {
+  .hero__banner {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
       url('../img/hero-tablet@2x.jpg');
   }
 }
 
 @media (min-width: 1440px) {
-  .hero {
+  .hero__banner {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
       url('../img/hero.jpg');
   }
 }
 
 @media (min-width: 1440px) and (min-resolution: 2dppx),
   (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero {
+  .hero__banner {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.66) 100%),
       url('../img/hero@2x.jpg');
   }
-}
-
-.hero__content {
-  position: absolute;
-
-  left: 24px;
-  right: 24px;
-  bottom: 32px;
 }
 
 .hero__title {
@@ -71,12 +69,13 @@
 
   margin: 0 0 24px;
 
-  color: #fff;
+  color: var(--color-white);
 
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 40px;
-  line-height: 1.15;
-  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .hero__description {
@@ -84,10 +83,12 @@
 
   margin: 0 0 24px;
 
-  color: #fff;
+  color: var(--color-white);
 
+  font-family: var(--font-main);
   font-size: 18px;
   line-height: 1.5;
+  font-weight: 400;
 }
 
 /* =========================
@@ -95,40 +96,44 @@
    ========================= */
 
 .hero__button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 44px;
   box-sizing: border-box;
 
-  padding: 16px 30px;
+  padding: 10px 24px;
 
-  background-color: #fff;
-  color: #000;
+  background-color: var(--color-white);
+  color: var(--color-text);
 
-  border: 2px solid transparent;
-  border-radius: 10px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius);
 
   text-decoration: none;
   text-align: center;
 
+  cursor: pointer;
+
   transition:
-    background-color 250ms ease,
-    color 250ms ease,
-    transform 150ms ease;
+    background-color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
-/* Наведение */
-.hero__button:hover {
-  background-color: #f4d000;
-}
-
-/* Нажатие */
-.hero__button:active {
-  transform: scale(0.98);
-}
-
-/* Фокус с клавиатуры */
+/* На мобільному кнопка біла поверх фото, тож на ховері лише міняється заливка */
+.hero__button:hover,
 .hero__button:focus-visible {
-  outline: 2px solid #f4d000;
+  background-color: var(--color-btn);
+}
+
+.hero__button:active {
+  background-color: var(--color-btn-active);
+}
+
+.hero__button:focus-visible {
+  outline: 2px solid var(--color-btn);
   outline-offset: 2px;
 }
 
@@ -137,35 +142,29 @@
    ========================= */
 
 @media (min-width: 768px) {
-  .hero {
-    min-height: 700px;
-  }
-
-  .hero__content {
-    left: 48px;
-    right: 48px;
-    bottom: 40px;
-  }
-
-  .hero__title {
-    font-size: 50px;
-  }
-
-  .hero__description {
-    font-size: 19px;
+  .hero__banner {
+    height: 431px;
+    padding: 32px;
   }
 
   .hero__button {
-    display: inline-block;
+    display: inline-flex;
     width: auto;
 
-    background-color: #f4d000;
-    color: #000;
+    background-color: var(--color-btn);
+    color: var(--color-text);
+    border-color: var(--color-btn);
   }
 
-  /* Наведение на планшете */
-  .hero__button:hover {
-    background-color: #e0c000;
+  .hero__button:hover,
+  .hero__button:focus-visible {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--color-btn);
+  }
+
+  .hero__button:active {
+    background-color: var(--color-btn-active);
+    box-shadow: inset 0 0 0 1px var(--color-btn);
   }
 }
 
@@ -174,15 +173,12 @@
    ========================= */
 
 @media (min-width: 1440px) {
-  .hero {
-    min-height: 768px;
+  .hero__banner {
+    height: 702px;
+    padding: 32px 64px;
   }
 
   .hero__content {
-    left: 72px;
-    right: 72px;
-    bottom: 40px;
-
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 40px;
@@ -195,7 +191,7 @@
 
     margin: 0 0 32px;
 
-    font-size: 58px;
+    font-size: 56px;
   }
 
   .hero__description {
@@ -203,25 +199,18 @@
     grid-row: 2;
 
     margin: 0;
-
-    font-size: 20px;
   }
 
   .hero__button {
     grid-column: 2;
-    grid-row: 1 / 3;
+    grid-row: 2;
 
     align-self: end;
 
-    display: inline-block;
+    display: inline-flex;
     width: auto;
 
-    background-color: #f4d000;
-    color: #000;
-  }
-
-  /* Наведение на десктопе */
-  .hero__button:hover {
-    background-color: #e0c000;
+    background-color: var(--color-btn);
+    color: var(--color-text);
   }
 }

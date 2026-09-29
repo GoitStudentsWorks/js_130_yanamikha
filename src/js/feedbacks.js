@@ -9,7 +9,7 @@ const swiper = new Swiper('.feedbacks-swiper', {
   modules: [Navigation, Pagination, Keyboard],
 
   slidesPerView: 1,
-  spaceBetween: 16,
+  spaceBetween: 24,
 
   navigation: {
     nextEl: '.feedbacks-button-next',
@@ -27,11 +27,6 @@ const swiper = new Swiper('.feedbacks-swiper', {
 
   breakpoints: {
     768: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-
-    1440: {
       slidesPerView: 3,
       spaceBetween: 24,
     },
