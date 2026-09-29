@@ -164,8 +164,7 @@
 
 .feedbacks-button:hover:not(.swiper-button-disabled),
 .feedbacks-button:focus-visible:not(.swiper-button-disabled) {
-  color: var(--color-white);
-  background-color: var(--color-text);
+  background-color: var(--color-btn-active);
 }
 
 .feedbacks-button.swiper-button-disabled {
@@ -174,23 +173,42 @@
   pointer-events: none;
 }
 
+.feedbacks-pagination
+  .swiper-pagination-bullet:last-child:not(.swiper-pagination-bullet-active) {
+  width: 4px;
+  height: 4px;
+}
+
 /* =========================
    PAGINATION
    ========================= */
 
-.feedbacks-pagination .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+.feedbacks-pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 6px;
+}
 
-  margin: 0 2px !important;
+.feedbacks-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  margin: 0 !important;
 
   border-radius: 50%;
 
   background-color: var(--color-text);
   opacity: 0.2;
+
+  transition:
+    width var(--transition),
+    height var(--transition),
+    opacity var(--transition);
 }
 
 .feedbacks-pagination .swiper-pagination-bullet-active {
+  width: 8px;
+  height: 8px;
   opacity: 1;
 }
 
