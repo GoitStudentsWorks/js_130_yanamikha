@@ -1,39 +1,71 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
+import { getFeedbacks } from './api.js';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const swiper = new Swiper('.feedbacks-swiper', {
-  modules: [Navigation, Pagination, Keyboard],
+const feedbacksList = document.querySelector('.feedbacks-list');
 
-  slidesPerView: 1,
-  spaceBetween: 16,
+function createFeedbacksMarkup(feedbacks) {
+  return feedbacks
+    .map(
+      ({ descr, name }) => `
+        <li class="feedbacks-card swiper-slide">
+          <p class="feedbacks-text">"${descr}"</p>
+          <p class="feedbacks-author">${name}</p>
+        </li>
+      `
+    )
+    .join('');
+}
 
-  navigation: {
-    nextEl: '.feedbacks-button-next',
-    prevEl: '.feedbacks-button-prev',
-  },
+function initSwiper() {
+  new Swiper('.feedbacks-swiper', {
+    modules: [Navigation, Pagination, Keyboard],
 
-  pagination: {
-    el: '.feedbacks-pagination',
-    clickable: true,
-  },
+    slidesPerView: 1,
+    spaceBetween: 16,
 
-  keyboard: {
-    enabled: true,
-  },
-
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 16,
+    navigation: {
+      nextEl: '.feedbacks-button-next',
+      prevEl: '.feedbacks-button-prev',
     },
 
-    1440: {
-      slidesPerView: 3,
-      spaceBetween: 24,
+    pagination: {
+      el: '.feedbacks-pagination',
+      clickable: true,
     },
-  },
-});
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    },
+  });
+}
+
+async function loadFeedbacks() {
+  try {
+    const data = await getFeedbacks();
+
+    const sortedFeedbacks = [...data.feedbacks].sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+    );
+
+    feedbacksList.innerHTML = createFeedbacksMarkup(sortedFeedbacks);
+
+    initSwiper();
+  } catch (error) {
+    console.error('Failed to load feedbacks:', error);
+  }
+}
+
+loadFeedbacks();

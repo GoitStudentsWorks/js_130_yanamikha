@@ -1,48 +1,58 @@
+/* =========================
+   FEEDBACKS — MOBILE
+   ========================= */
+
 .feedbacks {
   padding: 64px 0;
+  background-color: var(--color-surface);
 }
 
+/* =========================
+   HEADER
+   ========================= */
+
 .feedbacks-header {
-  max-width: 620px;
-  margin: 0 auto 32px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.feedbacks-decoration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.feedbacks-decoration img {
+.feedbacks .decoration {
   display: block;
   width: 300px;
-  height: auto;
+  height: 20.32px;
+  margin: 0 auto 24px;
+  overflow: visible;
 }
 
 .feedbacks-title {
-  margin: 0 0 16px;
+  max-width: 335px;
+  margin: 0 auto 24px;
 
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1;
+
   color: var(--color-text);
+  text-align: center;
 }
 
 .feedbacks-description {
-  max-width: 560px;
+  max-width: 335px;
   margin: 0 auto;
 
   font-family: var(--font-main);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+
   color: var(--color-text);
+  text-align: center;
 }
 
-/* Swiper */
+/* =========================
+   SWIPER
+   ========================= */
 
 .feedbacks-swiper {
   width: 100%;
@@ -50,31 +60,37 @@
 }
 
 .feedbacks-list {
-  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
+/* =========================
+   CARD
+   ========================= */
 
 .feedbacks-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   box-sizing: border-box;
-  min-height: 300px;
-  padding: 20px 16px;
+  height: 328px;
+  padding: 32px;
 
-  border: 1px solid var(--color-text);
-  border-radius: var(--radius);
+  border: 2px solid var(--color-text);
+  border-radius: 16px;
 
-  background-color: var(--color-surface);
+  background-color: #faf7e6;
 }
 
 .feedbacks-text {
   margin: 0;
 
   font-family: var(--font-main);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
+
   color: var(--color-text);
 }
 
@@ -82,72 +98,91 @@
   margin: 24px 0 0;
 
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
+
   color: var(--color-text);
 }
 
-/* Controls */
+/* =========================
+   CONTROLS
+   ========================= */
 
 .feedbacks-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  width: 100%;
   margin-top: 24px;
 }
 
 .feedbacks-pagination {
   display: flex;
   align-items: center;
+  min-height: 8px;
 }
 
 .feedbacks-navigation {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 16px;
 }
+
+/* =========================
+   BUTTONS
+   ========================= */
 
 .feedbacks-button {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 36px;
-  height: 36px;
-
+  width: 48px;
+  height: 48px;
   padding: 0;
 
-  border: 1px solid var(--color-text);
+  border: 2px solid var(--color-text);
   border-radius: var(--radius);
 
   color: var(--color-text);
   background-color: transparent;
 
   font-family: var(--font-main);
-  font-size: 20px;
+  font-size: 32px;
+  font-weight: 400;
   line-height: 1;
 
   cursor: pointer;
 
   transition:
     color var(--transition),
-    background-color var(--transition);
+    background-color var(--transition),
+    opacity var(--transition);
 }
 
-.feedbacks-button:hover,
-.feedbacks-button:focus-visible {
+.feedbacks-button:hover:not(.swiper-button-disabled),
+.feedbacks-button:focus-visible:not(.swiper-button-disabled) {
   color: var(--color-white);
   background-color: var(--color-text);
 }
 
-/* Swiper pagination */
+.feedbacks-button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =========================
+   PAGINATION
+   ========================= */
 
 .feedbacks-pagination .swiper-pagination-bullet {
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
 
-  margin: 0 3px !important;
+  margin: 0 2px !important;
 
   border-radius: 50%;
 
@@ -156,101 +191,16 @@
 }
 
 .feedbacks-pagination .swiper-pagination-bullet-active {
-  width: 6px;
-  height: 6px;
-
   opacity: 1;
 }
 
-/* Mobile */
-
-@media only screen and (max-width: 767px) {
-  .feedbacks {
-    padding: 64px 0;
-  }
-
-  .feedbacks-header {
-    margin-bottom: 32px;
-  }
-
-  .feedbacks-decoration {
-    margin-bottom: 16px;
-  }
-
-  .feedbacks-decoration img {
-    width: 247px;
-  }
-
-  .feedbacks-title {
-    max-width: 330px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .feedbacks-description {
-    max-width: 330px;
-
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .feedbacks-card {
-    min-height: 298px;
-    padding: 28px;
-
-    border-width: 2px;
-  }
-
-  .feedbacks-text {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .feedbacks-author {
-    margin-top: 24px;
-
-    font-size: 14px;
-  }
-
-  .feedbacks-controls {
-    margin-top: 24px;
-  }
-
-  .feedbacks-button {
-    width: 44px;
-    height: 44px;
-
-    font-size: 22px;
-  }
-}
-
-.feedbacks-button.swiper-button-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* Tablet */
+/* =========================
+   TABLET — 768+
+   ========================= */
 
 @media only screen and (min-width: 768px) {
   .feedbacks {
-    padding: 80px 0;
-  }
-
-  .feedbacks-header {
-    margin-bottom: 32px;
-  }
-
-  .feedbacks-title {
-    font-size: 36px;
-  }
-}
-
-/* Desktop */
-
-@media only screen and (min-width: 1440px) {
-  .feedbacks {
-    padding: 96px 0;
+    padding: 64px 0;
   }
 
   .feedbacks-header {
@@ -258,23 +208,122 @@
   }
 
   .feedbacks-title {
-    font-size: 40px;
+    max-width: 704px;
+
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .feedbacks-description {
+    max-width: 600px;
+
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .feedbacks-card {
-    min-height: 300px;
-    padding: 24px;
+    height: 304px;
+    padding: 20px 16px;
+
+    border-width: 2px;
+    border-radius: 16px;
+
+    background-color: #faf7e6;
   }
 
   .feedbacks-text {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
   }
 
   .feedbacks-author {
-    font-size: 14px;
+    margin-top: 24px;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
   }
 
   .feedbacks-controls {
     margin-top: 24px;
+  }
+
+  .feedbacks-navigation {
+    gap: 16px;
+  }
+
+  .feedbacks-button {
+    width: 48px;
+    height: 48px;
+
+    font-size: 32px;
+  }
+}
+
+/* =========================
+   DESKTOP — 1440+
+   ========================= */
+
+@media only screen and (min-width: 1440px) {
+  .feedbacks {
+    padding: 64px 0;
+  }
+
+  .feedbacks-header {
+    margin-bottom: 40px;
+  }
+
+  .feedbacks-title {
+    max-width: 900px;
+
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .feedbacks-description {
+    max-width: 700px;
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .feedbacks-card {
+    height: 274px;
+    padding: 32px;
+
+    border-width: 2px;
+    border-radius: 16px;
+
+    background-color: #faf7e6;
+  }
+
+  .feedbacks-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .feedbacks-author {
+    margin-top: 24px;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .feedbacks-controls {
+    margin-top: 24px;
+  }
+
+  .feedbacks-navigation {
+    gap: 16px;
+  }
+
+  .feedbacks-button {
+    width: 48px;
+    height: 48px;
+
+    font-size: 32px;
   }
 }
