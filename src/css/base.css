@@ -1,20 +1,25 @@
 :root {
-  /* Кольори */
-  --color-bg: #ffffff;
+  --color-bg: #fff;
   --color-surface: #fbf9f1;
-  --color-text: #000000;
-  --color-white: #ffffff;
+  --color-card: #faf7e6;
+  --color-text: #000;
+  --color-white: #fff;
   --color-accent: #b09a0c;
   --color-btn: #dcc110;
   --color-btn-active: #e6d357;
   --color-hover-bg: rgba(0, 0, 0, 0.15);
   --color-error: #c40000;
 
-  /* Шрифти */
+
   --font-main: 'Mulish', sans-serif;
   --font-display: 'Cormorant', serif;
 
-  /* Інше */
+
+  --section-sm: 32px;
+  --section-md: 48px;
+  --section-lg: 64px;
+
+
   --radius: 6px;
   --transition: 250ms ease;
 
@@ -35,7 +40,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
 }
 
 main {
@@ -57,4 +62,104 @@ main:has(.back-link) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Рамка на ховері візуально 2px: 1px border + 1px внутрішня тінь,
+   щоб розмір кнопки не змінювався */
+.accent-button {
+  display: inline-flex;
+  font-weight: 500;
+  height: 44px;
+  width: 100%;
+  border: 1px solid var(--color-btn);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background-color: var(--color-btn);
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+.accent-button:hover,
+.accent-button:focus-visible {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px var(--color-btn);
+}
+
+.accent-button:active {
+  background-color: var(--color-btn-active);
+  box-shadow: inset 0 0 0 1px var(--color-btn);
+}
+
+.accent-button:disabled {
+  background-color: var(--color-btn);
+  box-shadow: none;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+a[aria-disabled='true'] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.decoration {
+  height: 20.3px;
+  margin: 0 auto 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .accent-button {
+    width: 310px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --section-sm: 48px;
+    --section-md: 80px;
+    --section-lg: 92px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
 }

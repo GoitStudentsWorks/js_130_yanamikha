@@ -1,0 +1,271 @@
+.feedbacks {
+  padding: var(--section-lg) 0;
+}
+
+.feedbacks-header {
+  max-width: 768px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.feedbacks-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.feedbacks-decoration img {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+
+.feedbacks-title {
+  margin: 0 0 24px;
+
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.feedbacks-description {
+  max-width: 560px;
+  margin: 0 auto;
+
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* Swiper */
+
+.feedbacks-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.feedbacks-list {
+  display: flex;
+}
+
+.feedbacks-list .feedbacks-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  height: auto;
+  padding: 32px;
+
+  border: 2px solid var(--color-text);
+  border-radius: 16px;
+
+  background-color: var(--color-card);
+}
+
+.feedbacks-text {
+  margin: 0;
+
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.feedbacks-author {
+  margin: 24px 0 0;
+
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* Controls */
+
+.feedbacks-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 48px;
+  margin-top: 32px;
+}
+
+.feedbacks-pagination {
+  --swiper-pagination-bullet-horizontal-gap: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feedbacks-navigation {
+  display: flex;
+  gap: 16px;
+}
+
+/* Рамка входить у 48px, тому падінг 10px + 2px рамки = 12px до іконки */
+.feedbacks-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 10px;
+
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+
+  color: var(--color-text);
+  background-color: var(--color-card);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition),
+    opacity var(--transition);
+}
+
+.feedbacks-button-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.feedbacks-button:hover,
+.feedbacks-button:focus-visible {
+  background-color: var(--color-btn-active);
+}
+
+.feedbacks-button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.feedbacks-button.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Swiper pagination */
+
+.feedbacks-pagination .swiper-pagination-bullet {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-text);
+  opacity: 0.2;
+
+  cursor: pointer;
+
+  transition: opacity var(--transition);
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:nth-child(2) {
+  width: 6px;
+  height: 6px;
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:nth-child(3) {
+  width: 4px;
+  height: 4px;
+}
+
+.feedbacks-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 767px) {
+  .feedbacks-header {
+    margin-bottom: 32px;
+  }
+
+  .feedbacks-decoration {
+    margin-bottom: 16px;
+  }
+
+  .feedbacks-decoration img {
+    width: 247px;
+  }
+
+  .feedbacks-title {
+    max-width: 330px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedbacks-description {
+    max-width: 330px;
+
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .feedbacks-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .feedbacks-author {
+    margin-top: 24px;
+
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 768px) {
+  .feedbacks-header {
+    margin-bottom: 32px;
+  }
+
+  .feedbacks-list .feedbacks-card {
+    padding: 20px;
+  }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 1440px) {
+  .feedbacks-header {
+    margin-bottom: 40px;
+  }
+
+  .feedbacks-title {
+    font-size: 48px;
+  }
+
+  .feedbacks-list .feedbacks-card {
+    padding: 32px;
+  }
+
+  .feedbacks-text {
+    font-size: 16px;
+  }
+
+  .feedbacks-author {
+    font-size: 14px;
+  }
+}

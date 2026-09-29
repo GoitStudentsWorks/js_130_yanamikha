@@ -1,0 +1,185 @@
+/* =========================
+   BENEFITS — MOBILE
+   ========================= */
+
+.benefits {
+  padding: var(--section-lg) 0;
+}
+
+.benefits__heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.benefits .decoration {
+  display: block;
+  width: 300px;
+  height: 21px;
+  margin: 0 auto 24px;
+}
+
+.benefits__title {
+  max-width: 343px;
+  margin: 0 auto;
+
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.benefits__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.benefits__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.benefits__icon {
+  display: block;
+  flex-shrink: 0;
+
+  width: 100px;
+  height: 100px;
+
+  margin-bottom: 32px;
+
+  fill: none;
+  stroke: currentColor;
+}
+
+.benefits__item-title {
+  margin: 0 0 12px;
+
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.benefits__text {
+  margin: 0;
+
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.benefits__tablet-break {
+  display: inline;
+}
+
+/* =========================
+   BENEFITS — TABLET
+   768px — 1439px
+   ========================= */
+
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .benefits__heading {
+    margin-bottom: 40px;
+  }
+
+  .benefits .decoration {
+    margin-bottom: 16px;
+  }
+
+  .benefits__title {
+    max-width: 704px;
+
+    font-size: 28px;
+  }
+
+  .benefits__list {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 100%;
+  }
+
+  .benefits__item {
+    flex: 1 1 0;
+
+    min-width: 0;
+    height: 334px;
+  }
+
+  .benefits__item-title {
+    width: 100%;
+  }
+
+  .benefits__text {
+    width: 100%;
+  }
+
+  .benefits__tablet-break {
+    display: block;
+  }
+}
+
+/* =========================
+   BENEFITS — DESKTOP
+   1440px+
+   ========================= */
+
+@media only screen and (min-width: 1440px) {
+  .benefits__heading {
+    margin-bottom: 40px;
+  }
+
+  .benefits .decoration {
+    margin-bottom: 16px;
+  }
+
+  .benefits__title {
+    max-width: 650px;
+
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .benefits__list {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .benefits__item {
+    flex: 0 1 320.67px;
+
+    min-width: 0;
+    max-width: 320.67px;
+  }
+
+  .benefits__item-title {
+    width: 100%;
+  }
+
+  .benefits__text {
+    width: 100%;
+  }
+
+  .benefits__tablet-break {
+    display: inline;
+  }
+}
