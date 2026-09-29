@@ -54,6 +54,7 @@ a {
 }
 
 .footer__cols {
+  gap: 40px;
   display: flex;
 }
 .footer__col--menu {
