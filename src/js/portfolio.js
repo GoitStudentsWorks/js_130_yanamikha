@@ -15,7 +15,6 @@ const INITIAL_PAGES = 3;
 let page = 1;
 let totalCount = 0;
 let selectedCategory = { category: 'All Photos', id: '' };
-let cardHeight;
 
 const categories = await getCategories();
 
@@ -101,17 +100,15 @@ loadMoreBtn.addEventListener('click', async () => {
 
     totalCount = answer.totalItems;
 
+    const oldCardsCount = galleryEl.children.length;
+
     createGallery(answer.weddingPhotos, true);
 
-    if (cardHeight) {
-      const galleryGap = galleryEl
-        ? parseInt(getComputedStyle(galleryEl).gap)
-        : 0;
-      window.scrollBy({
-        top: cardHeight + galleryGap,
-        behavior: 'smooth',
-      });
-    }
+    const firstNewCard = galleryEl.children[oldCardsCount + LIMIT - 1];
+    firstNewCard?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
   } catch (error) {
     page -= 1;
 
@@ -155,10 +152,6 @@ async function loadInitialPhotos(id) {
     page = INITIAL_PAGES;
 
     createGallery(photos);
-    const card = document.querySelector('.portfolio__gallery-item');
-    if (card) {
-      cardHeight = card.getBoundingClientRect().height;
-    }
   } catch (error) {
     iziToast.error({
       message: 'Something went wrong. Please try again!',
