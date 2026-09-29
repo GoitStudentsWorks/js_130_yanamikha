@@ -40,6 +40,7 @@ const filterButtons = categories
           aria-label="${category} filter button"
           aria-expanded="false"
           data-id="${_id || ''}"
+          data-label="${category}"
           class="${!_id ? 'pressed' : ''}"
         >
           ${category}

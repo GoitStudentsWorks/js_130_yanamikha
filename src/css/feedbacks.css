@@ -1,9 +1,9 @@
 .feedbacks {
-  padding: 64px 0;
+  padding: var(--section-lg) 0;
 }
 
 .feedbacks-header {
-  max-width: 620px;
+  max-width: 768px;
   margin: 0 auto 32px;
   text-align: center;
 }
@@ -22,12 +22,12 @@
 }
 
 .feedbacks-title {
-  margin: 0 0 16px;
+  margin: 0 0 24px;
 
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--color-text);
 }
 
@@ -53,19 +53,19 @@
   display: flex;
 }
 
-.feedbacks-card {
+.feedbacks-list .feedbacks-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   box-sizing: border-box;
-  min-height: 300px;
-  padding: 20px 16px;
+  height: auto;
+  padding: 32px;
 
-  border: 1px solid var(--color-text);
-  border-radius: var(--radius);
+  border: 2px solid var(--color-text);
+  border-radius: 16px;
 
-  background-color: var(--color-surface);
+  background-color: var(--color-card);
 }
 
 .feedbacks-text {
@@ -95,80 +95,108 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 24px;
+  height: 48px;
+  margin-top: 32px;
 }
 
 .feedbacks-pagination {
+  --swiper-pagination-bullet-horizontal-gap: 0;
+
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .feedbacks-navigation {
   display: flex;
-  gap: 8px;
+  gap: 16px;
 }
 
+/* Рамка входить у 48px, тому падінг 10px + 2px рамки = 12px до іконки */
 .feedbacks-button {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
 
-  padding: 0;
+  padding: 10px;
 
-  border: 1px solid var(--color-text);
-  border-radius: var(--radius);
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
 
   color: var(--color-text);
-  background-color: transparent;
-
-  font-family: var(--font-main);
-  font-size: 20px;
-  line-height: 1;
+  background-color: var(--color-card);
 
   cursor: pointer;
 
   transition:
-    color var(--transition),
-    background-color var(--transition);
+    background-color var(--transition),
+    opacity var(--transition);
+}
+
+.feedbacks-button-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .feedbacks-button:hover,
 .feedbacks-button:focus-visible {
-  color: var(--color-white);
-  background-color: var(--color-text);
+  background-color: var(--color-btn-active);
+}
+
+.feedbacks-button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.feedbacks-button.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Swiper pagination */
 
 .feedbacks-pagination .swiper-pagination-bullet {
-  width: 5px;
-  height: 5px;
-
-  margin: 0 3px !important;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
 
   border-radius: 50%;
 
   background-color: var(--color-text);
   opacity: 0.2;
+
+  cursor: pointer;
+
+  transition: opacity var(--transition);
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:nth-child(2) {
+  width: 6px;
+  height: 6px;
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:nth-child(3) {
+  width: 4px;
+  height: 4px;
 }
 
 .feedbacks-pagination .swiper-pagination-bullet-active {
-  width: 6px;
-  height: 6px;
-
   opacity: 1;
+}
+
+.feedbacks-pagination .swiper-pagination-bullet:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 /* Mobile */
 
 @media only screen and (max-width: 767px) {
-  .feedbacks {
-    padding: 64px 0;
-  }
-
   .feedbacks-header {
     margin-bottom: 32px;
   }
@@ -194,13 +222,6 @@
     line-height: 1.5;
   }
 
-  .feedbacks-card {
-    min-height: 298px;
-    padding: 28px;
-
-    border-width: 2px;
-  }
-
   .feedbacks-text {
     font-size: 16px;
     line-height: 1.5;
@@ -211,59 +232,33 @@
 
     font-size: 14px;
   }
-
-  .feedbacks-controls {
-    margin-top: 24px;
-  }
-
-  .feedbacks-button {
-    width: 44px;
-    height: 44px;
-
-    font-size: 22px;
-  }
-}
-
-.feedbacks-button.swiper-button-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 /* Tablet */
 
 @media only screen and (min-width: 768px) {
-  .feedbacks {
-    padding: 80px 0;
-  }
-
   .feedbacks-header {
     margin-bottom: 32px;
   }
 
-  .feedbacks-title {
-    font-size: 36px;
+  .feedbacks-list .feedbacks-card {
+    padding: 20px;
   }
 }
 
 /* Desktop */
 
 @media only screen and (min-width: 1440px) {
-  .feedbacks {
-    padding: 96px 0;
-  }
-
   .feedbacks-header {
     margin-bottom: 40px;
   }
 
   .feedbacks-title {
-    font-size: 40px;
+    font-size: 48px;
   }
 
-  .feedbacks-card {
-    min-height: 300px;
-    padding: 24px;
+  .feedbacks-list .feedbacks-card {
+    padding: 32px;
   }
 
   .feedbacks-text {
@@ -272,9 +267,5 @@
 
   .feedbacks-author {
     font-size: 14px;
-  }
-
-  .feedbacks-controls {
-    margin-top: 24px;
   }
 }
