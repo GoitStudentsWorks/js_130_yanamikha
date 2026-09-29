@@ -1,6 +1,6 @@
 .footer {
   --footer-bg: #faf7e6;
-  padding: 48px 0;
+  padding: var(--section-md) 0;
   background-color: var(--color-surface);
   color: var(--color-text);
 }
@@ -18,7 +18,7 @@
 .footer__brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 13px;
 }
 
@@ -29,8 +29,8 @@
 }
 
 .footer__logo {
-  width: 206px;
-  height: 161px;
+   width: 206px;
+  height: auto;
 }
 
 .footer__copy {
@@ -40,6 +40,7 @@
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
+  text-align: center;
 }
 
 .footer__cols {
@@ -51,6 +52,7 @@
 .footer__col {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
@@ -65,11 +67,10 @@
 .footer__menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
 }
 
-/* Горизонтальні падінги потрібні для фону на ховері,
-   відʼємні маржини повертають текст на лінію заголовка */
 .footer__link {
   display: inline-flex;
   align-items: center;
@@ -77,15 +78,21 @@
   margin: 0 -6px;
   padding: 0 6px;
   border-radius: var(--radius);
+  border-bottom: 1px solid transparent;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  transition: background-color var(--transition);
+  color: var(--color-text);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
 }
 
 .footer__social {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .footer__social-link {
@@ -94,11 +101,16 @@
   gap: 12px;
   margin: 0 -6px;
   padding: 8px 6px;
+  border-bottom: 1px solid transparent;
   border-radius: var(--radius);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  transition: background-color var(--transition);
+  color: var(--color-text);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
 }
 
 .footer__social-icon {
@@ -114,6 +126,20 @@
 .footer__link:focus-visible,
 .footer__social-link:focus-visible {
   background-color: var(--color-hover-bg);
+}
+
+.footer__link:hover,
+.footer__social-link:hover,
+.footer__link:focus-visible,
+.footer__social-link:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.footer__logo-link:active,
+.footer__link:active,
+.footer__social-link:active {
+  background-color: transparent;
+  color: var(--color-accent);
 }
 
 .footer__logo-link:focus-visible,
@@ -132,17 +158,27 @@
   }
 
   .footer__logo {
-    width: 128px;
-    height: 100px;
+    width: 206px;
+  height: auto;
   }
 
   .footer__cols {
     flex-direction: row;
   }
+
+  .footer__brand,
+  .footer__col,
+  .footer__social {
+    align-items: flex-start;
+  }
+
+  .footer__copy {
+    text-align: left;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-  .footer {
-    padding: 80px 0;
+  .footer__col {
+    width: 166px;
   }
 }

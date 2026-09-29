@@ -3,13 +3,7 @@
    ========================= */
 
 .contacts {
-  padding: 64px 0;
-  background-color: #fbf9f1;
-}
-
-.container.contacts-container {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: var(--section-lg) 0;
 }
 
 .contacts-container {
@@ -32,7 +26,7 @@
 .contacts-title {
   margin-bottom: 24px;
 
-  font-family: 'Cormorant', serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
@@ -71,8 +65,24 @@
   font-size: 16px;
   line-height: 1.5;
 
-  color: #1d1d1b;
+  color: var(--color-text);
   text-decoration: underline;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.contacts-link:hover,
+.contacts-link:focus-visible {
+  background-color: var(--color-hover-bg);
+  border-bottom-color: currentColor;
+}
+
+.contacts-link:active {
+  background-color: transparent;
+  color: var(--color-accent);
 }
 
 .contacts-form {
@@ -177,24 +187,31 @@
   line-height: 1.5;
   text-align: center;
 
-  background-color: #dcc110;
-  border: 1px solid #dcc110;
-  border-radius: 6px;
+  color: var(--color-text);
+  background-color: var(--color-btn);
+  border: 1px solid var(--color-btn);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
 }
 
 .contacts-button:hover,
-.contacts-button:focus {
+.contacts-button:focus-visible {
   background-color: transparent;
-  border-color: #dcc110;
+  box-shadow: inset 0 0 0 1px var(--color-btn);
 }
 
 .contacts-button:active {
-  background-color: #e6d357;
-  border-color: #dcc110;
+  background-color: var(--color-btn-active);
+  box-shadow: inset 0 0 0 1px var(--color-btn);
 }
 
 .contacts-button:disabled {
-  background-color: #dcc110;
+  background-color: var(--color-btn);
+  box-shadow: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -245,11 +262,6 @@
    ========================= */
 
 @media screen and (min-width: 768px) {
-  .container.contacts-container {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
   .contacts-title {
     text-align: left;
   }
@@ -263,21 +275,11 @@
   }
 }
 
-
 /* =========================
    DESKTOP — від 1440px
    ========================= */
 
 @media screen and (min-width: 1440px) {
-  .contacts {
-    padding: 92px 0;
-  }
-
-  .container.contacts-container {
-    padding-left: 64px;
-    padding-right: 64px;
-  }
-
   .contacts-container {
     flex-direction: row;
     gap: 24px;

@@ -1,8 +1,26 @@
+.portfolio {
+  padding: var(--section-lg) 0;
+}
+
 .portfolio .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.portfolio__header {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portfolio__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .portfolio__categories {
@@ -24,97 +42,118 @@ ul.portfolio__categories {
   display: flex;
   justify-content: center;
 }
+
+/* Рамка прозора в звичайному стані, щоб активна кнопка не змінювала розмір */
 .portfolio__categories button {
+  display: inline-grid;
   padding: 10px 16px;
+  border: 2px solid transparent;
   border-radius: 4px;
-  font-family: sans-serif;
+  font-family: var(--font-main);
   font-size: 16px;
-  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
   text-align: center;
   white-space: nowrap;
-  border: none;
-  background-color: #fbf7f0;
-  transition: all 0.2s ease;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
 }
 
-.portfolio__categories button.pressed,
-.portfolio__categories.pressed button,
-.portfolio__categories button:focus {
-  box-shadow: 0 0 0 2px #000;
-  position: relative;
-  z-index: 10;
+/* Резервує ширину жирного тексту, щоб сусіди не зсувались при зміні ваги */
+.portfolio__categories button::after {
+  content: attr(data-label);
+  height: 0;
+  overflow: hidden;
+  font-weight: 500;
+  visibility: hidden;
 }
 
-.portfolio__categories button:hover {
-  color: var(--color-accent);
+.portfolio__categories button:hover,
+.portfolio__categories button:focus-visible {
+  background-color: var(--color-hover-bg);
+}
+
+.portfolio__categories button.pressed {
+  border-color: var(--color-text);
+  font-weight: 500;
+  background-color: var(--color-bg);
+}
+
+.portfolio__categories button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 .portfolio__gallery {
-  gap: 16px;
-  margin-top: 24px;
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
+  gap: 16px 24px;
+  width: 100%;
+  margin-top: 24px;
+  list-style: none;
 }
 
 .portfoilio__btn {
+  width: auto;
+  height: auto;
   margin-top: 40px;
-}
-
-.portfolio__gallery-image {
-  border-radius: 16px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .portfolio__gallery-item {
-  width: 335px;
-  height: 335px;
+  aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 16px;
+}
+
+.portfolio__gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .portfolio__gallery-link {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 16px;
+}
+
+.portfolio__gallery-link:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio__gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .portfolio__gallery {
-    gap: 24px;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .portfolio__gallery-item:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
-  }
-
-  .portfolio__gallery-item {
-    width: 340px;
-    height: 340px;
+    width: calc((100% - 24px) / 2);
   }
 }
 
 @media only screen and (min-width: 1440px) {
+  .portfolio__title {
+    font-size: 48px;
+  }
+
   .portfolio__gallery {
-    gap: 24px;
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .portfolio__gallery-item {
-    width: 421px;
-    height: 421px;
-    grid-column: span 2;
-  }
-
-  .portfolio__gallery-item:nth-last-child(2):nth-child(3n + 1) {
-    grid-column: 2 / span 2;
-  }
-
-  .portfolio__gallery-item:last-child:nth-child(3n + 1) {
-    grid-column: 3 / span 2;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

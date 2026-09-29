@@ -5,6 +5,20 @@
   margin-top: 32px;
   border: 1px solid;
   border-radius: 8px;
+  color: var(--color-text);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  background-color: var(--color-hover-bg);
+}
+
+.back-link:active {
+  background-color: transparent;
+  color: var(--color-accent);
 }
 .back-link::before {
   content: '';
@@ -23,7 +37,8 @@
   animation: slide 500ms linear infinite alternate-reverse both;
   animation-play-state: paused;
 }
-.back-link:hover::before {
+.back-link:hover::before,
+.back-link:focus-visible::before {
   opacity: 1;
   animation-play-state: running;
 }

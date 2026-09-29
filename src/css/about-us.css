@@ -4,7 +4,7 @@
   align-items: center;
   min-width: 320px;
   margin-inline: auto;
-  padding: 64px 32px;
+  padding: var(--section-lg) 0;
 }
 
 .about-us-icon {
@@ -15,38 +15,42 @@
   margin-bottom: 24px;
 }
 
+.about-us-content {
+  width: 100%;
+  margin: 0 auto 40px;
+}
+
 .about-us-heading {
   margin-bottom: 24px;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 28px;
-  line-height: 120%;
+  line-height: 1.2;
   text-align: center;
 }
 
 .about-us-text {
-  margin-bottom: 40px;
   text-align: center;
 }
 
 .about-us-photo {
   display: block;
   width: 100%;
+}
+
+.about-us-photo img {
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: 24px;
 }
 
-/* tablet */
-@media (min-width: 375px) {
-  .about-us {
-    max-width: 768px;
-    padding: 64px 32px;
+@media only screen and (min-width: 1440px) {
+  .about-us-content {
+    max-width: 779px;
   }
-}
 
-/* desktop */
-@media (min-width: 768px) {
-  .about-us {
-    max-width: 1440px;
-    padding: 92px 64px;
+  .about-us-heading {
+    font-size: 40px;
   }
 }

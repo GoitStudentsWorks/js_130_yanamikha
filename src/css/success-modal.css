@@ -61,7 +61,7 @@
 }
 
 .close-btn:hover,
-.close-btn:focus {
+.close-btn:focus-visible {
   color: var(--color-accent);
 }
 
