@@ -129,13 +129,6 @@
   background-color: var(--color-hover-bg);
 }
 
-.footer__link:hover,
-.footer__social-link:hover,
-.footer__link:focus-visible,
-.footer__social-link:focus-visible {
-  border-bottom-color: currentColor;
-}
-
 .footer__logo-link:active,
 .footer__link:active,
 .footer__social-link:active {
