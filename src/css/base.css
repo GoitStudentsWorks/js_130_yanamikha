@@ -10,15 +10,12 @@
   --color-hover-bg: rgba(0, 0, 0, 0.15);
   --color-error: #c40000;
 
-
   --font-main: 'Mulish', sans-serif;
   --font-display: 'Cormorant', serif;
-
 
   --section-sm: 32px;
   --section-md: 48px;
   --section-lg: 64px;
-
 
   --radius: 6px;
   --transition: 250ms ease;

@@ -7,8 +7,7 @@ const messageInput = form.querySelector('textarea[name="message"]');
 const submitButton = form.querySelector('.contacts-button');
 const loader = form.querySelector('.contacts-loader');
 
-const ORDERS_URL =
-  'https://wedding-photographer.b.goit.study/api/orders';
+const ORDERS_URL = 'https://wedding-photographer.b.goit.study/api/orders';
 
 // =========================
 // VALIDATION
@@ -37,9 +36,7 @@ function validateMessage() {
 // =========================
 
 function getErrorElement(input) {
-  return input
-    .closest('.contacts-label')
-    .querySelector('.contacts-error');
+  return input.closest('.contacts-label').querySelector('.contacts-error');
 }
 
 // =========================
