@@ -6,7 +6,7 @@ const nameInput = form.querySelector('input[name="name"]');
 const phoneInput = form.querySelector('input[name="phone"]');
 const messageInput = form.querySelector('textarea[name="message"]');
 const submitButton = form.querySelector('.contacts-button');
-const loader = form.querySelector('.contacts-loader');
+const loader = form.querySelector('.loader');
 
 // =========================
 // VALIDATION
