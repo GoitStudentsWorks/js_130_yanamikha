@@ -35,7 +35,7 @@
 .header__list {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
   margin-inline: -6px;
 }
 
@@ -43,7 +43,7 @@
   display: inline-flex;
   align-items: center;
   height: 24px;
-  padding: 0 6px;
+  padding: 0;
   border-bottom: 1px solid transparent;
   border-radius: var(--radius);
   font-size: 16px;
@@ -58,7 +58,6 @@
 .header__link:hover,
 .header__link:focus-visible {
   background-color: var(--color-hover-bg);
-  border-bottom-color: currentColor;
 }
 
 .header__link:active {
