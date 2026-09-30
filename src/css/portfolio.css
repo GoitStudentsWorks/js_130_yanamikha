@@ -98,7 +98,7 @@ ul.portfolio__categories {
 }
 
 .portfoilio__btn {
-  width: auto;
+  width: 100%;
   height: auto;
   margin-top: 40px;
   padding: 10px 24px;
@@ -140,6 +140,9 @@ ul.portfolio__categories {
   .portfolio__gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+  .portfoilio__btn {
+    width: 310px;
   }
 }
 

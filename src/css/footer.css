@@ -1,5 +1,4 @@
 .footer {
-  --footer-bg: #faf7e6;
   padding: var(--section-md) 0;
   background-color: var(--color-surface);
   color: var(--color-text);
@@ -12,7 +11,7 @@
   padding: 48px 20px;
   border: 2px solid var(--color-text);
   border-radius: 24px;
-  background-color: var(--footer-bg);
+  background-color: var(--color-card);
 }
 
 .footer__brand {
