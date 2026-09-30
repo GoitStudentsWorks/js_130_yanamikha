@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/team_project_js/",
+    "build": "vite build --base=/js_130_yanamikha/",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
