@@ -1,13 +1,12 @@
 import { openModal } from './success-modal.js';
+import { createOrder } from './api.js';
 
 const form = document.querySelector('.contacts-form');
 const nameInput = form.querySelector('input[name="name"]');
 const phoneInput = form.querySelector('input[name="phone"]');
 const messageInput = form.querySelector('textarea[name="message"]');
 const submitButton = form.querySelector('.contacts-button');
-const loader = form.querySelector('.contacts-loader');
-
-const ORDERS_URL = 'https://wedding-photographer.b.goit.study/api/orders';
+const loader = form.querySelector('.loader');
 
 // =========================
 // VALIDATION
@@ -75,6 +74,12 @@ function clearPhoneError() {
   errorElement.textContent = '';
 }
 
+phoneInput.addEventListener('input', () => {
+  if (validatePhone()) {
+    clearPhoneError();
+  }
+});
+
 // =========================
 // MESSAGE
 // =========================
@@ -141,19 +146,7 @@ form.addEventListener('submit', async event => {
   loader.classList.remove('is-hidden');
 
   try {
-    const response = await fetch(ORDERS_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(orderData),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message || 'Something went wrong.');
-    }
+    await createOrder(orderData);
 
     form.reset();
 
